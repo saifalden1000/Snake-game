@@ -1,0 +1,21 @@
+body {
+  font-family: "Press Start 2P", cursive;
+  text-align: center;
+}
+
+.d-none {
+  display: none;
+}
+
+h1 {
+  margin-block: 50px;
+  font-size: 72px;
+}
+canvas {
+  border: 5px solid blue;
+}
+
+.game-over {
+  background-color: red;
+  opacity: 0.8;
+}
