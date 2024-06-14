@@ -10,7 +10,8 @@ var snakeY = blockSize * 5;
 var snakeBody = [];
 var speedX = 0;
 var speedY = 0;
-
+var score = 0;
+var scoreCounter = document.querySelector("#scoreCounter");
 var foodX;
 var foodY;
 var gameOver = false;
@@ -22,6 +23,8 @@ window.onload = function () {
   context = board.getContext("2d");
   document.addEventListener("keydown", function (e) {
     if (gameOver) {
+      score = 0;
+      scoreCounter.innerText = `Score:${score}`;
       snakeBody = [];
       snakeX = blockSize * 5;
       snakeY = blockSize * 5;
@@ -45,6 +48,8 @@ function update() {
   context.fillRect(foodX, foodY, blockSize, blockSize);
 
   if (snakeX == foodX && snakeY == foodY) {
+    score++;
+    scoreCounter.innerText = `Score:${score}`;
     snakeBody.push([foodX, foodY]);
     placeFood();
   }
@@ -58,6 +63,7 @@ function update() {
   context.fillStyle = "lime";
   snakeX += speedX * blockSize;
   snakeY += speedY * blockSize;
+
   context.fillRect(snakeX, snakeY, blockSize, blockSize);
   for (var i = 0; i < snakeBody.length; i++) {
     context.fillRect(snakeBody[i][0], snakeBody[i][1], blockSize, blockSize);

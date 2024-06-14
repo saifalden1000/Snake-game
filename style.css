@@ -8,7 +8,8 @@ body {
 }
 
 h1 {
-  margin-block: 50px;
+  margin-top: 20px;
+  margin-bottom: 20px;
   font-size: 72px;
 }
 canvas {
@@ -18,4 +19,8 @@ canvas {
 .game-over {
   background-color: red;
   opacity: 0.8;
+}
+span {
+  display: block;
+  margin-bottom: 20px;
 }
